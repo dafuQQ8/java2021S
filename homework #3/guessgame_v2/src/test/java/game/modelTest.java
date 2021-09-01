@@ -3,13 +3,18 @@ package game;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
-
 class modelTest {
 
-    Model model = new Model();
+    Model model;
+    
+    @BeforeEach
+    void init() {
+        model = new Model();
+    }
 
     @Test
     void testTargedNumberisAlwaysInRange() {
