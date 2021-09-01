@@ -51,7 +51,7 @@ public class Model {
 	}
 	// this method creates random number
 	public int targetNumber(int rangeMinimum, int rangeMaximum) { //tested
-		this.targetNumber = (int) Math.floor(Math.random() * ((rangeMaximum - 1) - (rangeMinimum + 1)) + rangeMinimum + 1);
+		this.targetNumber = (int) Math.floor(Math.random() * ((rangeMaximum - 1) - (rangeMinimum)) + rangeMinimum + 1);
 		return targetNumber;
 	}
 

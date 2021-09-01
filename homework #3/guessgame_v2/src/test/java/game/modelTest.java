@@ -17,7 +17,7 @@ class modelTest {
         model = new Model();
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(150)
     void testTargedNumberisAlwaysInRange() {
         assertThat(model.targetNumber(0, 100)).isBetween(1, 99);
     }
