@@ -1,5 +1,6 @@
 package game;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -31,8 +32,10 @@ class modelTest {
         //given
         model.targetNumber = 57;
         //then
-        assertTrue(model.correctnessProofer(model.targetNumber), () -> "Gives true if input matches targetNumber.");
-        assertFalse(model.correctnessProofer(model.targetNumber + 1), () -> "Gives false if input doesn't match targetNumber.");
+        assertAll(
+            () -> assertTrue(model.correctnessProofer(model.targetNumber), () -> "Gives true if input matches targetNumber."),
+            () -> assertFalse(model.correctnessProofer(model.targetNumber + 1), () -> "Gives false if input doesn't match targetNumber.")
+        );
         model.targetNumber = 0;
     }
     @Nested
