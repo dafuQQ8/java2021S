@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
@@ -16,11 +17,9 @@ class modelTest {
         model = new Model();
     }
 
-    @Test
+    @RepeatedTest(100)
     void testTargedNumberisAlwaysInRange() {
-        for (int i = 2; i < 100; i++) {
-            assertThat(model.targetNumber(0, i)).isBetween(1, 99);
-        }
+        assertThat(model.targetNumber(0, 100)).isBetween(1, 99);
     }
 
     @Test
