@@ -14,6 +14,7 @@ import java.util.Objects;
  * @author kagu-tsuchi
  */
 public class Student {
+    /*to test this goto test folder*/
     String studentsName;
     String studentSurname;
 	int studentsAge;
