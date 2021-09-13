@@ -49,10 +49,11 @@ public class DBHandler extends Config {
     }
 
     public static void addUpdate(String variableColumn, String userInput, String userName) {
-        String toSQL = "UPDATE " + GlobalConstants.DATABASE + " SET " + variableColumn + " = '" + userInput + "' WHERE Username = " + '"' + userName + '"';
+        String toSQL = "UPDATE " + GlobalConstants.DATABASE + " SET " + variableColumn + " = ? WHERE Username = " + '"' + userName + '"';
         // UPDATE reg SET Firstname = 'smith' WHERE Username = "Smittie09"
         try {
             PreparedStatement prStatement = getDBConnection().prepareStatement(toSQL);
+            prStatement.setString(1, userInput);
             prStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
